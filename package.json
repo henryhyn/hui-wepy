@@ -1,0 +1,22 @@
+{
+  "name": "hui-wepy",
+  "version": "1.2.8",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev": "wepy build --watch",
+    "prebuild": "cd dist && rm -frv `ls | grep -v project.config.json`",
+    "build": "cross-env NODE_ENV=production wepy build --no-cache",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "wepy": "^1.6.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "wepy-compiler-babel": "^1.5.1"
+  }
+}
