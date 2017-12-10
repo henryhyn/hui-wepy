@@ -21,6 +21,8 @@ const config = {
 };
 
 if (process.env.NODE_ENV === 'production') {
+  delete config.compilers.babel.sourceMap;
+
   config.plugins = {
     uglifyjs: {
       filter: /\.js$/,
