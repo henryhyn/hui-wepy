@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "dev": "wepy build --watch",
+    "prestart": "npm install",
+    "start": "wepy build --watch",
     "prebuild": "cd dist && rm -frv `ls | grep -v project.config.json`",
     "build": "cross-env NODE_ENV=production wepy build --no-cache",
     "lint": "eslint --ext .js,.wpy src",
