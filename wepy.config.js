@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   eslint: true,
   compilers: {
     pug: {},
@@ -18,4 +18,15 @@ module.exports = {
       ]
     }
   }
+};
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins = {
+    uglifyjs: {
+      filter: /\.js$/,
+      config: {}
+    }
+  };
 }
+
+module.exports = config;
