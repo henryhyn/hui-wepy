@@ -1,13 +1,20 @@
 module.exports = {
+  eslint: true,
   compilers: {
     pug: {},
-    less: {},
+    less: {
+      compress: true
+    },
     babel: {
+      sourceMap: true,
       presets: [
         'env'
       ],
       plugins: [
-        'transform-class-properties'
+        'transform-class-properties',
+        'transform-decorators-legacy',
+        'transform-object-rest-spread',
+        'transform-export-extensions'
       ]
     }
   }
