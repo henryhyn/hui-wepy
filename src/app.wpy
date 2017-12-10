@@ -6,6 +6,18 @@
       pages: [
         'pages/index'
       ]
+    };
+
+    globalData = {
+      userInfo: null
+    };
+
+    getUserInfo (cb) {
+      wepy.getUserInfo({
+        success (res) {
+          cb && cb(res.userInfo);
+        }
+      });
     }
   }
 </script>

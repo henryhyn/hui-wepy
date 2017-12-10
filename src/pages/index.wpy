@@ -1,18 +1,43 @@
 <template lang='pug'>
-  view#test-id: text Hello world!
+  view.userinfo
+    image.userinfo-avatar(src='{{userInfo.avatarUrl}}' background-size='cover')
+    view: text.userinfo-nickname {{userInfo.nickName}}
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '91聚乐'
+    };
+
+    data = {
+      userInfo: {}
+    };
+
+    onLoad () {
+      this.$parent.getUserInfo(userInfo => {
+        this.userInfo = userInfo;
+        this.$apply();
+      });
+    }
   }
 </script>
 
 <style lang='less'>
-  #test-id {
-    text {
-      background-color: red;
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .userinfo-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+    .userinfo-nickname {
+      color: #aaa;
     }
   }
 </style>
