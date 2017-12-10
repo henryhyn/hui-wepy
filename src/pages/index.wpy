@@ -1,5 +1,5 @@
-<template>
-  <view>Hello world!</view>
+<template lang='pug'>
+  view#test-id: text Hello world!
 </template>
 
 <script>
@@ -8,3 +8,11 @@
   export default class Index extends wepy.page {
   }
 </script>
+
+<style lang='less'>
+  #test-id {
+    text {
+      background-color: red;
+    }
+  }
+</style>
