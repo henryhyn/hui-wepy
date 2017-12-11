@@ -1,8 +1,7 @@
 <template lang='pug'>
   view.hui-block
     repeat(for='{{list}}')
-      navigator(url='{{item.path}}')
-        cell(:bd='item.name')
+      cell(:bd='item.name' :url='item.path')
 </template>
 
 <script>
@@ -18,7 +17,7 @@
         name: 'Panel 面板',
         path: '/examples/panel'
       }, {
-        name: 'Panel 面板',
+        name: 'NavBar 导航条',
         path: '/examples/navbar'
       }]
     };

@@ -1,6 +1,7 @@
 <template lang='pug'>
-  view.hui-cell
+  navigator.hui-cell.hui-cell-access(url='{{url}}')
     view.hui-cell-bd: text {{bd}}
+    view.hui-cell-ft: text {{ft}}
 </template>
 
 <script>
@@ -8,7 +9,9 @@
 
   export default class Index extends wepy.component {
     props = {
-      bd: String
+      url: String,
+      bd: String,
+      ft: String
     };
   }
 </script>
@@ -33,6 +36,36 @@
 
     &:last-child::after {
       display: none;
+    }
+
+    .hui-cell-bd {
+      flex: 1;
+    }
+
+    .hui-cell-ft {
+      color: #666;
+      font-size: small;
+      position: relative;
+    }
+  }
+
+  .hui-cell-access {
+    .hui-cell-ft {
+      padding-right: ~'20rpx';
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: ~'4rpx';
+        content: ' ';
+        display: inline-block;
+        height: ~'12rpx';
+        width: ~'12rpx';
+        border-width: ~'4rpx' ~'4rpx' 0 0;
+        border-color: #c8c8c8;
+        border-style: solid;
+        transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+      }
     }
   }
 </style>
