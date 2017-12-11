@@ -1,0 +1,10 @@
+<template lang='pug'>
+  view: text Hello world!!!
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class Index extends wepy.component {
+  }
+</script>

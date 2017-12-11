@@ -1,10 +1,18 @@
 <template lang='pug'>
-  view: text Hello world!
+  view
+    cell
+    cell
+    cell
+    cell
 </template>
 
 <script>
   import wepy from 'wepy';
+  import cell from '@/components/cell';
 
   export default class Index extends wepy.page {
+    components = {
+      cell
+    };
   }
 </script>

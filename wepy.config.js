@@ -1,4 +1,16 @@
+const path = require('path');
+
+// 定义源码和构建结果的路径
+const ROOT_PATH = path.resolve(__dirname);
+const SRC_PATH = path.resolve(ROOT_PATH, 'src');
+
 const config = {
+  resolve: {
+    extensions: ['.js', '.wpy'],
+    alias: {
+      '@': SRC_PATH
+    }
+  },
   eslint: true,
   compilers: {
     pug: {},
