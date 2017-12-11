@@ -1,16 +1,13 @@
-<template>
-  <view class="swiper-tab">
-    <block wx:for="{{tabs}}" wx:for-index="idx" wx:for-item="tabName">
-      <view class="swiper-tab-list {{currentTab==idx ? 'on' : ''}}" data-current="{{idx}}" bindtap="swichNav">{{tabName}}</view>
-    </block>
-  </view>
+<template lang='pug'>
+  view.swiper-tab
+    block(wx:for='{{tabs}}' wx:key='index')
+      view.swiper-tab-list(class="{{currentTab===index ? 'on' : ''}}" data-current='{{index}}' bindtap='switchNav') {{item}}
 </template>
 
 <script>
   import wepy from 'wepy';
 
   export default class NavBar extends wepy.component {
-
     props = {
       tabs: {
         type: Object,
@@ -24,7 +21,7 @@
     };
 
     methods = {
-      swichNav (e) {
+      switchNav (e) {
         if (this.data.currentTab === e.target.dataset.current) {
           return false;
         } else {
@@ -36,7 +33,6 @@
 </script>
 
 <style lang='less'>
-
   .swiper-tab {
     width: 100%;
     border-bottom: ~'2rpx' solid #CCCCCC;
@@ -58,5 +54,4 @@
     color: #049BFF;
     border-bottom: ~'5rpx' solid #049BFF;
   }
-
 </style>

@@ -1,10 +1,9 @@
 <template lang='pug'>
-  view
-    nav-bar(:tabs='tabs' :currentTab.sync='currentTab')
-    swiper(current='{{currentTab}}' duration='300' bindchange='bindChange')
-      swiper-item: view: text TAB1
-      swiper-item: view: text TAB2
-      swiper-item: view: text TAB3
+  nav-bar(:tabs='tabs' :currentTab.sync='currentTab')
+  swiper(current='{{currentTab}}' duration='300' bindchange='bindChange')
+    swiper-item: view: text TAB1
+    swiper-item: view: text TAB2
+    swiper-item: view: text TAB3
 </template>
 
 <script>
