@@ -1,5 +1,5 @@
 <template lang='pug'>
-  nav-bar(:tabs='tabs' :currentTab.sync='currentTab')
+  navBar(:tabs='tabs' :currentTab.sync='currentTab')
   swiper(current='{{currentTab}}' duration='300' bindchange='bindChange')
     swiper-item: view: text 美食
     swiper-item: view: text 景点
@@ -23,7 +23,7 @@
     };
 
     components = {
-      'nav-bar': NavBar
+      navBar: NavBar
     };
 
     methods = {
