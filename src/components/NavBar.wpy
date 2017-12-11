@@ -1,7 +1,7 @@
 <template lang='pug'>
-  view.swiper-tab
-    block(wx:for='{{tabs}}' wx:key='index')
-      view.swiper-tab-list(class="{{currentTab===index ? 'on' : ''}}" data-current='{{index}}' bindtap='switchNav') {{item}}
+  view.hui-navbar
+    repeat(for='{{tabs}}' key='index')
+      view.hui-navbar-item(class="{{currentTab===index ? 'active' : ''}}" data-current='{{index}}' @tap='switchNav') {{item}}
 </template>
 
 <script>
@@ -10,7 +10,7 @@
   export default class NavBar extends wepy.component {
     props = {
       tabs: {
-        type: Object,
+        type: Array,
         default: []
       },
       currentTab: {
@@ -33,25 +33,22 @@
 </script>
 
 <style lang='less'>
-  .swiper-tab {
-    width: 100%;
-    border-bottom: ~'2rpx' solid #CCCCCC;
+  .hui-navbar {
+    display: flex;
     text-align: center;
-    line-height: ~'80rpx';
-    background: #fff;
-  }
+    background-color: white;
 
-  .swiper-tab-list {
-    font-size: ~'40rpx';
-    display: inline-block;
-    width: 33.33%;
-    color: #777777;
-    padding-top: ~'5rpx';
-    padding-bottom: ~'5rpx';
-  }
+    .hui-navbar-item {
+      flex: 1;
+      color: #777777;
+      padding-top: ~'10rpx';
+      padding-bottom: ~'10rpx';
+      border-bottom: ~'4rpx' solid #CCCCCC;
 
-  .on {
-    color: #049BFF;
-    border-bottom: ~'5rpx' solid #049BFF;
+      &.active {
+        color: #049BFF;
+        border-bottom: ~'4rpx' solid #049BFF;
+      }
+    }
   }
 </style>

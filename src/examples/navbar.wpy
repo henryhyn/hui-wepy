@@ -1,9 +1,10 @@
 <template lang='pug'>
   nav-bar(:tabs='tabs' :currentTab.sync='currentTab')
   swiper(current='{{currentTab}}' duration='300' bindchange='bindChange')
-    swiper-item: view: text TAB1
-    swiper-item: view: text TAB2
-    swiper-item: view: text TAB3
+    swiper-item: view: text 美食
+    swiper-item: view: text 景点
+    swiper-item: view: text 酒店
+    swiper-item: view: text 购物
 </template>
 
 <script>
@@ -18,7 +19,7 @@
 
     data = {
       currentTab: 0,
-      tabs: ['TAB1', 'TAB2', 'TAB3']
+      tabs: ['美食', '景点', '酒店', '购物']
     };
 
     components = {
