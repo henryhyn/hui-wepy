@@ -1,9 +1,9 @@
 <template lang='pug'>
-  view
-    cell
-    cell
-    cell
-    cell
+  view.hui-block
+    cell(bd='单行文本')
+    cell(bd='单行文本')
+    cell(bd='单行文本')
+    cell(bd='单行文本')
 </template>
 
 <script>

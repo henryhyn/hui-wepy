@@ -49,6 +49,8 @@
 </script>
 
 <style lang='less'>
+  @import 'components/index.less';
+
   .container {
     height: 100%;
     display: flex;
