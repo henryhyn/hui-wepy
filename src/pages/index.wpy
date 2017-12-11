@@ -1,6 +1,6 @@
 <template lang='pug'>
   view.hui-block
-    block(wx:for='{{list}}' wx:key='item.path')
+    repeat(for='{{list}}')
       navigator(url='{{item.path}}')
         cell(:bd='item.name')
 </template>
