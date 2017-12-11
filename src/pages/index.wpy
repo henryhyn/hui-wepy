@@ -17,6 +17,9 @@
       }, {
         name: 'Panel 面板',
         path: '/examples/panel'
+      }, {
+        name: 'Panel 面板',
+        path: '/examples/navbar'
       }]
     };
 

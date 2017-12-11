@@ -1,0 +1,35 @@
+<template lang='pug'>
+  view
+    nav-bar(:tabs='tabs' :currentTab.sync='currentTab')
+    swiper(current='{{currentTab}}' duration='300' bindchange='bindChange')
+      swiper-item: view: text TAB1
+      swiper-item: view: text TAB2
+      swiper-item: view: text TAB3
+</template>
+
+<script>
+  import wepy from 'wepy';
+  import NavBar from '@/components/NavBar';
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'NavBar测试',
+      enablePullDownRefresh: false
+    };
+
+    data = {
+      currentTab: 0,
+      tabs: ['TAB1', 'TAB2', 'TAB3']
+    };
+
+    components = {
+      'nav-bar': NavBar
+    };
+
+    methods = {
+      bindChange (e) {
+        this.currentTab = e.detail.current;
+      }
+    };
+  }
+</script>
