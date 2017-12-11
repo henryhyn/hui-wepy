@@ -1,9 +1,8 @@
 <template lang='pug'>
   view.hui-block
-    cell(bd='单行文本')
-    cell(bd='单行文本')
-    cell(bd='单行文本')
-    cell(bd='单行文本')
+    block(wx:for='{{list}}' wx:key='item.path')
+      navigator(url='{{item.path}}')
+        cell(:bd='item.name')
 </template>
 
 <script>
@@ -11,6 +10,16 @@
   import cell from '@/components/cell';
 
   export default class Index extends wepy.page {
+    data = {
+      list: [{
+        name: 'Cell 单元格',
+        path: '/examples/cell'
+      }, {
+        name: 'Panel 面板',
+        path: '/examples/panel'
+      }]
+    };
+
     components = {
       cell
     };

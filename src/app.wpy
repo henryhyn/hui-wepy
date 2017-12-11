@@ -5,6 +5,8 @@
     config = {
       pages: [
         'pages/index',
+        'examples/cell',
+        'examples/panel',
         'pages/profile'
       ],
       window: {
