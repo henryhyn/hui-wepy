@@ -11,7 +11,7 @@
   import wepy from 'wepy';
   import NavBar from '@/components/NavBar';
 
-  export default class Index extends wepy.page {
+  export default class navbar extends wepy.page {
     config = {
       navigationBarTitleText: 'NavBar测试',
       enablePullDownRefresh: false

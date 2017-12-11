@@ -8,7 +8,7 @@
   import wepy from 'wepy';
   import Cell from '@/components/Cell';
 
-  export default class Index extends wepy.page {
+  export default class index extends wepy.page {
     data = {
       list: [{
         name: 'Cell 单元格',
