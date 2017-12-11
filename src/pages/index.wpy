@@ -7,7 +7,7 @@
 
 <script>
   import wepy from 'wepy';
-  import cell from '@/components/cell';
+  import Cell from '@/components/Cell';
 
   export default class Index extends wepy.page {
     data = {
@@ -21,7 +21,7 @@
     };
 
     components = {
-      cell
+      cell: Cell
     };
   }
 </script>
