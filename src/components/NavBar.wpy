@@ -1,6 +1,6 @@
 <template lang='pug'>
   view.hui-navbar
-    repeat(for='{{tabs}}' key='index')
+    repeat(for='{{tabs}}')
       view.hui-navbar-item(class="{{currentTab===index ? 'active' : ''}}" data-current='{{index}}' @tap='switchNav') {{item}}
 </template>
 
